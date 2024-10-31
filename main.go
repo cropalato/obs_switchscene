@@ -21,6 +21,11 @@ type Config struct {
 }
 
 var osExit = os.Exit
+var (
+	version = "dev"
+	commit  = "none"
+	date    = "unknown"
+)
 
 func main() {
 	// Initialize logging
@@ -52,6 +57,9 @@ func main() {
 func parseFlags() Config {
 	config := Config{}
 
+	// Add version flag
+	showVersion := flag.Bool("version", false, "Show version information")
+
 	flag.StringVar(&config.host, "host", "localhost", "OBS WebSocket host")
 	flag.IntVar(&config.port, "port", 4444, "OBS WebSocket port")
 	flag.DurationVar(&config.timeout, "timeout", 5*time.Second, "Connection timeout")
@@ -65,6 +73,11 @@ func parseFlags() Config {
 
 	flag.Parse()
 
+	// Check if version flag was set
+	if *showVersion {
+		fmt.Printf("obs_switchscene %s (commit: %s, built at: %s)\n", version, commit, date)
+		osExit(0)
+	}
 	// Validate positional arguments
 	args := flag.Args()
 	if len(args) != 2 {
