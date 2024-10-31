@@ -1,5 +1,6 @@
-i# OBS Scene Switcher
+# OBS Scene Switcher
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 A robust Go utility to toggle between two OBS Studio scenes with configurable options and improved error handling.
 
 ## Features
@@ -130,10 +131,6 @@ Contributions are welcome! Here are some ways you can contribute:
 - Scene transition effects
 - Connection health monitoring
 - Multiple scene group support
-
-## License
-
-MIT License
 
 ## Troubleshooting
 

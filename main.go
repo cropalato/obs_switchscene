@@ -1,3 +1,7 @@
+// main.go
+// Copyright (C) 2024 Ricardo Melo
+//
+// Distributed under terms of the MIT license.
 package main
 
 import (
